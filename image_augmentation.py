@@ -5,9 +5,7 @@ from skimage.util import random_noise
 import random
 import numpy as np
 import cv2
-import tensorflow as tf
 import os
-import torch
 
 def rand_range(a, b):
     '''
