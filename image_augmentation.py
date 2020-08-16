@@ -83,7 +83,7 @@ def random_filter(im):
 def resize(im, im_size):
     return cv2.resize(im, (im_size,im_size), interpolation=cv2.INTER_CUBIC)
 
-def augment(im, im_size, random_affine_flag=1, random_perspective_flag=1, random_filter_flag=1, random_noise_flag=1, random_crop_flag=1, resize_flag=1):
+def augment(im, im_size, random_affine_flag=0, random_perspective_flag=0, random_filter_flag=0, random_noise_flag=0, random_crop_flag=0, resize_flag=0):
     '''
     image augmentation by doing a sereis of transfomations on the image.
     '''
@@ -100,8 +100,6 @@ def augment(im, im_size, random_affine_flag=1, random_perspective_flag=1, random
         im = random_crop(im)
     if resize_flag:
         im = resize(im, im_size)
-    # print(im.shape)
-    # print(im.max())
     im = 2*(im/im.max())-1
     return im
 
